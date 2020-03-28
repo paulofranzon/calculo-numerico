@@ -1,0 +1,43 @@
+# **********************************************************
+# CÁLCULO NUMÉRICO - INTEGRAÇÃO NUMÉRICA (Regra do Trapézio)
+# **********************************************************
+#
+import math
+#
+# 1. Dados de entrada
+# 1.1 Função y = f(x) a ser integrada
+#
+# Funções: Seno - math.sin | Cosseno - math.cos | Tangente - math.tan 
+# Raiz Quadrada - math.sqrt | Logaritmo - math.log | Exponencial - math.exp
+# Pi - math.pi
+#
+def funcao(x):
+    return -(x**2)+(5*x)
+#
+# 1.2 Extremos de Integração (limite inferior a)
+#
+a = 0
+#
+# 1.3 Extremos de Integração (limite superior: b)
+#
+b = 5
+#
+# 1.4 Número de passos (m)
+#
+m = 10000
+#
+h = (b-a)/m
+print(h)
+#
+# 2. Regra do trapézio
+#
+n = a
+integral = 0
+while (n<=b):
+    integral = integral + 0.5*(funcao(n+h)+funcao(n))*h
+    n = n + h
+#
+# 3. Saída
+#
+print("O resultado é {:f}"
+    .format(integral))
